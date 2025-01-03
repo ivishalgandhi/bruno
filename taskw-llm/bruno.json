@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "taskw-llm",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,19 @@
+meta {
+  name: tasks
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/api/v1/tasks
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {"description":"Clear all emails due Sun"}
+}
