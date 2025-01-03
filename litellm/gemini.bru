@@ -1,0 +1,45 @@
+meta {
+  name: gemini
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://192.168.1.207:4010/chat/completions
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer sk-1234
+}
+
+body:json {
+  {
+    "model": "gemini/gemini-2.0-flash-exp",
+    "messages": [
+      {
+        "role": "user",
+        "content": "List 5 popular cookie recipes"
+      }
+    ],
+    "response_format": {
+      "type": "json_object",
+      "response_schema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "recipe_name": {
+              "type": "string",
+            },
+          },
+          "required": [
+            "recipe_name"
+          ],
+        },
+      }
+    }
+  }
+}
